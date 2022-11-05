@@ -1,0 +1,8 @@
+# configuration.yaml file
+mongo_config:
+  con_str: mongodb+srv://itaybaran:mdSOSi1969@cluster0.rc7sls6.mongodb.net/?retryWrites=true&w=majority
+
+logger:
+  log_level: INFO
+  log_dir_path: C:\Users\itayo\PycharmProjects\mongodb\logs
+  log_name: data_services
