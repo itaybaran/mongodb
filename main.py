@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from pymongo_get_database import get_database
-from pymongo import MongoClient
+from service.executor import Executor
 
 
 app = FastAPI()
+executor = Executor(config_file_path='service/configuration.yaml')
 
 
 @app.get("/")
@@ -13,7 +13,5 @@ async def root():
 
 @app.get("/items/{item_id}")
 async def read_item(item_id):
-    db = get_database()
-    collection = db["user_1_items"]
-    item = collection.find_one({"_id": item_id})
+    item = executor.mongo.get_doc_by_id(item_id)
     return {"item_id": item_id}
