@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 class data_mongo:
     def __init__(self,config,logger):
-        self.config = config.get_config()
+        self.config = config
         self.logger = logger
         self.mongo_con_str = self.config.get_config()["mongo_config"]["con_str"]
         self.mongo_db_name = self.config.get_config()["mongo_config"]["db_name"]
@@ -16,5 +16,6 @@ class data_mongo:
         # Create the database for our example (we will use the same database throughout the tutorial
         return client[self.mongo_db_name]
 
-    def get_doc_by_id(self,_id):
-        return self.collection.find_one({"_id": _id})
+    def get_doc_by_id(self,item_name):
+        item = self.collection.find_one({"item_name": "Blender"})
+        return item

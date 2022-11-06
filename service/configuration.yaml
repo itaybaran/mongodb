@@ -2,7 +2,7 @@
 mongo_config:
   con_str: mongodb+srv://itaybaran:mdSOSi1969@cluster0.rc7sls6.mongodb.net/?retryWrites=true&w=majority
   db_name: user_shopping_list
-  collection_name: user_shopping_list
+  collection_name: user_1_items
 
 logger:
   log_level: INFO
